@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tailwind CSS 練習</title>
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- 
     步驟一：引入 Tailwind CSS
     請將以下程式碼加入到 head 標籤中：
@@ -18,10 +19,10 @@
   </head>
   <body>
     <!-- 導航列 -->
-    <nav>
-      <div>
+    <nav class="py-4 px-6 border-b mb-12">
+      <div class="flex justify-between items-center">
         <img src="https://placehold.jp/100x50.png" alt="Logo" />
-        <ul>
+        <ul class="flex space-x-3">
           <li><a href="#">首頁</a></li>
           <li><a href="#">關於我們</a></li>
           <li><a href="#">服務項目</a></li>
