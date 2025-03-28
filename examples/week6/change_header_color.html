@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /** jQuery version **/
+        $(document).ready(function () {
+            const headerHeight = $('header').height();
+            console.log(headerHeight);
+            $(document).scroll(function () {
+                var scrollHeight = $(window).scrollTop();
+                console.log(scrollHeight);
+                if (scrollHeight >= headerHeight) {
+                    $('header').addClass('sticky').addClass('top-0');
+                }
+                if (scrollHeight >= headerHeight * 5) {
+                    $('header').addClass('bg-white');
+                }
+            });
+        });
+    </script>
+</head>
+<body class="container mx-auto">
+    <!-- header -->
+    <header class="border flex items-center justify-between h-32">
+        <img src="https://www.yuntech.edu.tw/images/website_png/Group_640.png" alt="LOGO">
+        <ul class="flex items-center gap-x-4">
+            <li>Register</li>
+            <li>Login</li>
+        </ul>
+    </header>
+
+    <!-- main -->
+    <div class="h-screen bg-indigo-500">
+    </div>
+
+    <div class="h-screen bg-orange-100">
+    </div>
+
+    <!-- footer -->
+    <footer class="border">Copyright 2024 Fuyuan Cheng</footer>
+
+    
+</body>
+</html>

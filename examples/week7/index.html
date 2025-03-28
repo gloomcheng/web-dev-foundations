@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS 練習</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 
+    步驟一：引入 Tailwind CSS
+    請將以下程式碼加入到 head 標籤中：
+    <script src="https://cdn.tailwindcss.com"></script> 
+
+    步驟二：
+    1. 前往 Tailwind CSS 官方文件：https://tailwindcss.com/docs
+    2. 學習如何使用 Tailwind 的 utility classes
+    3. 透過添加適當的 class 來設計網頁樣式
+    -->
+  </head>
+  <body>
+    <!-- 導航列 -->
+    <nav class="py-4 px-6 border-b mb-12">
+      <div class="flex justify-between items-center">
+        <img src="https://placehold.jp/100x50.png" alt="Logo" />
+        <ul class="flex space-x-3">
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">關於我們</a></li>
+          <li><a href="#">服務項目</a></li>
+          <li><a href="#">聯絡資訊</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 首頁橫幅 -->
+    <header>
+      <h1>探索 Tailwind CSS 的魅力</h1>
+      <p>透過實作學習現代化的 CSS 框架</p>
+      <div>
+        <button>開始學習</button>
+        <button>觀看教學</button>
+      </div>
+    </header>
+
+    <!-- 主要內容區 -->
+    <main>
+      <!-- 特色介紹 -->
+      <section>
+        <h2>為什麼選擇我們？</h2>
+        <div>
+          <div>
+            <img src="https://placehold.jp/150x150.png" alt="圖示 1" />
+            <h3>快速開發</h3>
+            <p>使用 Utility-First 的方法，加速開發流程</p>
+          </div>
+          <div>
+            <img src="https://placehold.jp/150x150.png" alt="圖示 2" />
+            <h3>響應式設計</h3>
+            <p>輕鬆打造適配各種螢幕尺寸的網站</p>
+          </div>
+          <div>
+            <img src="https://placehold.jp/150x150.png" alt="圖示 3" />
+            <h3>客製化設計</h3>
+            <p>依據需求打造獨特的使用者介面</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 產品展示 -->
+      <section>
+        <h2>熱門課程</h2>
+        <div>
+          <div>
+            <img src="https://placehold.jp/300x200.png" alt="課程 1" />
+            <h3>HTML 基礎教學</h3>
+            <p>學習網頁結構的基本元素</p>
+            <p>課程時長：2 小時</p>
+            <button>立即報名</button>
+          </div>
+          <div>
+            <img src="https://placehold.jp/300x200.png" alt="課程 2" />
+            <h3>CSS 樣式設計</h3>
+            <p>掌握網頁設計的核心技巧</p>
+            <p>課程時長：3 小時</p>
+            <button>立即報名</button>
+          </div>
+          <div>
+            <img src="https://placehold.jp/300x200.png" alt="課程 3" />
+            <h3>JavaScript 互動程式</h3>
+            <p>為網頁添加豐富的互動效果</p>
+            <p>課程時長：4 小時</p>
+            <button>立即報名</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 用戶見證 -->
+      <section>
+        <h2>學員心得</h2>
+        <div>
+          <div>
+            <img src="https://placehold.jp/100x100.png" alt="用戶頭像 1" />
+            <p>「透過這個課程，我學會了如何有效率地開發網站。」</p>
+            <p>- 王小明</p>
+          </div>
+          <div>
+            <img src="https://placehold.jp/100x100.png" alt="用戶頭像 2" />
+            <p>「課程內容非常實用，讓我能夠快速上手。」</p>
+            <p>- 李小華</p>
+          </div>
+          <div>
+            <img src="https://placehold.jp/100x100.png" alt="用戶頭像 3" />
+            <p>「老師的教學方式清晰易懂，收穫良多。」</p>
+            <p>- 張小芳</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 註冊表單 -->
+      <section>
+        <h2>立即註冊</h2>
+        <form>
+          <div>
+            <label for="name">姓名：</label>
+            <input type="text" id="name" required />
+          </div>
+          <div>
+            <label for="email">電子郵件：</label>
+            <input type="email" id="email" required />
+          </div>
+          <div>
+            <label for="phone">電話：</label>
+            <input type="tel" id="phone" />
+          </div>
+          <div>
+            <label for="course">選擇課程：</label>
+            <select id="course">
+              <option value="">請選擇課程</option>
+              <option value="html">HTML 基礎教學</option>
+              <option value="css">CSS 樣式設計</option>
+              <option value="js">JavaScript 互動程式</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">留言：</label>
+            <textarea id="message" rows="4"></textarea>
+          </div>
+          <button type="submit">送出表單</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- 頁尾資訊 -->
+    <footer>
+      <div>
+        <div>
+          <h3>關於我們</h3>
+          <p>提供優質的網頁開發教學</p>
+          <p>地址：台北市某某區某某路123號</p>
+          <p>電話：(02) 1234-5678</p>
+          <p>Email：info@example.com</p>
+        </div>
+        <div>
+          <h3>快速連結</h3>
+          <ul>
+            <li><a href="#">常見問題</a></li>
+            <li><a href="#">課程介紹</a></li>
+            <li><a href="#">購買須知</a></li>
+            <li><a href="#">聯絡我們</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>追蹤我們</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <p>&copy; 2024 網頁設計學習中心. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- 
+    練習重點：
+    1. 導航列設計
+       - 製作固定置頂的導航列
+       - 在手機版時變為漢堡選單
+
+    2. 首頁橫幅
+       - 設計全寬的橫幅背景
+       - 製作引人注目的標題樣式
+       - 設計吸引人的按鈕效果
+
+    3. 特色介紹區
+       - 使用 Grid 或 Flexbox 排列內容
+       - 加入適當的間距
+       - 設計圖示的樣式
+
+    4. 產品展示區
+       - 製作響應式的卡片布局
+       - 設計圖片的顯示方式
+       - 加入互動效果（hover）
+
+    5. 用戶見證區
+       - 設計引述樣式
+       - 適當地排列用戶資訊
+       - 製作圓形的用戶頭像
+
+    6. 註冊表單
+       - 設計表單元素的樣式
+       - 加入適當的間距
+       - 製作具有互動效果的按鈕
+
+    7. 頁尾設計
+       - 製作多欄式的頁尾布局
+       - 設計連結的樣式
+       - 適當地排列聯絡資訊
+
+    8. 響應式設計
+       - 使用 Tailwind 的響應式類別
+       - 確保在不同裝置上都有良好的顯示效果
+       - 適當調整文字大小和間距
+    -->
+  </body>
+</html>
