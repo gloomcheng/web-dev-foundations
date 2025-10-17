@@ -135,3 +135,85 @@ $ code
 # 啟動 vs code 並以目前資料夾為專案起始路徑（推薦）
 $ code .
 ```
+
+---
+
+## CLI 心智模型（初學者版）
+
+- **Shell**：像是 `bash`/`zsh`/`fish`，負責解讀你輸入的指令
+- **Terminal**：顯示輸入/輸出的視窗
+- **Command**：`程式` + `參數(args)` + `選項`，例如：`ls -al /usr`
+- **目前路徑**：`pwd` 顯示；相對路徑(`./`, `..`) vs 絕對路徑(`/`, `~/`)
+- **Tab 補全**：輸入部分名稱後按 `Tab` 補齊，大幅減少打字與錯字
+
+---
+
+## 安全操作與常見選項
+
+- ⚠️ 刪除：優先用 `rm -i`（互動確認），避免誤刪；`rm -r` 會遞迴刪資料夾
+- 常見選項：
+  - `ls -a` 顯示隱藏檔、`ls -l` 詳細列表、`cp -R` 複製資料夾
+- 路徑小幫手：`~` 家目錄、`.` 目前、`..` 上一層
+
+---
+
+## 更多常用指令（精選）
+
+```bash
+# 檔案/資料夾
+mkdir demo && cd demo        # 建立資料夾並進入
+touch notes.txt              # 建立空檔案
+rmdir empty-dir              # 刪除空資料夾
+
+# 檢視內容
+less notes.txt               # 可翻頁檢視，q 離開
+head -n 5 notes.txt          # 前 5 行
+tail -n 5 notes.txt          # 後 5 行；tail -f 可即時追蹤
+
+# 搜尋
+grep -R "TODO" .            # 由目前路徑遞迴搜尋文字
+find . -name "*.md"          # 依檔名樣式尋找
+
+# 管線與重導向
+cat notes.txt | wc -l        # 統計行數
+echo "hello" >> notes.txt    # 追加寫入
+
+# macOS 小技巧
+open .                       # Finder 開啟目前資料夾
+pbcopy < notes.txt           # 複製到剪貼簿；pbpaste 反向
+
+# 資訊與協助
+which node                   # 程式所在路徑
+whoami; date                 # 使用者與現在時間
+man ls                       # 手冊；多數指令也支援 --help
+```
+
+---
+
+## 迷你練習（可直接複製貼上）
+
+```bash
+mkdir play && cd play
+echo "line1" > a.txt && echo "line2" >> a.txt
+cp a.txt b.txt && mv b.txt notes.txt
+grep -n "line" a.txt
+tail -n 1 a.txt
+cd .. && rm -r play # 若不確定，改用 rm -ri play 逐一確認
+```
+
+---
+
+## CLI Cheat Sheet（10 行）
+
+```bash
+pwd; ls -al          # 目前位置與清單
+cd ..; cd -          # 上一層；返回前一路徑
+mkdir x; touch f     # 建資料夾/檔案
+cp -R src dst        # 複製資料夾
+mv a b               # 重新命名/搬移
+rm -ri folder        # 安全刪除資料夾
+cat/less/head/tail   # 檢視檔案
+grep -R "text" .     # 搜尋文字
+open .               # Finder 開啟
+man cmd / cmd --help # 查看說明
+```
