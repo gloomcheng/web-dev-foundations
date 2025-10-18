@@ -4,7 +4,7 @@ Welcome to the **Web Development Foundations** course! This comprehensive curric
 
 ---
 
-## 📜 License
+## License
 
 This educational resource is released under the **CC BY (Creative Commons Attribution) 4.0 Taiwan** license.
 
