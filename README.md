@@ -17,7 +17,7 @@ You are free to:
 The only requirement is:
 - **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 
-See the full license terms: [CC BY 4.0 Taiwan](https://creativecommons.org/licenses/by/4.0/deed.zh_TW)
+See the full license terms: [CC BY 4.0 Taiwan](https://creativecommons.org/licenses/by/4.0/deed.zh-hant)
 
 ---
 
