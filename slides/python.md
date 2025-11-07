@@ -12,7 +12,9 @@ paginate: true
 
 ---
 
-# 超新手先這樣做 - Mac/Linux (1/2)
+# 快速開始
+
+## 超新手先這樣做 - Mac/Linux (1/2)
 
 **建立環境：**
 
@@ -33,7 +35,7 @@ print("Hello, Python!")
 
 ---
 
-# 超新手先這樣做 - Mac/Linux (2/2)
+## 超新手先這樣做 - Mac/Linux (2/2)
 
 **執行程式：**
 
@@ -50,7 +52,7 @@ Hello, Python!
 
 ---
 
-# 超新手先這樣做 - Windows (1/2)
+## 超新手先這樣做 - Windows (1/2)
 
 **建立環境：**
 
@@ -71,7 +73,7 @@ print("Hello, Python!")
 
 ---
 
-# 超新手先這樣做 - Windows (2/2)
+## 超新手先這樣做 - Windows (2/2)
 
 **執行程式：**
 
@@ -88,71 +90,56 @@ Hello, Python!
 
 ---
 
-# 什麼是 Python？
+# 基礎概念
 
-**Python 是一個超友善的程式語言！**
+## 什麼是 Python？
 
-想像你在跟電腦聊天，用簡單的英文句子指揮它做事。
+Python 是一個友善易學的程式語言
 
-**為什麼叫做 Python？**
-- 向英國喜劇團體「Monty Python」致敬
-- 像蛇一樣靈活，但不會咬人
-- 簡單易學，像兒童的積木
+**特色：**
+- 🎯 簡單好懂：程式碼像說話
+- 🚀 應用廣泛：網頁、AI、數據分析
+- 👥 社群龐大：資源超多
+- 🛠️ 工具豐富：有很多現成套件
 
-**Python 的超能力：**
-- 🎯 **簡單好懂**：程式碼像說話
-- 🚀 **什麼都能做**：網頁、遊戲、數據分析
-- 👥 **大家都在用**：資源超多
-- 🛠️ **工具一堆**：有很多現成工具
+---
 
-**💡 小提示：為什麼學 Python？**
-```
-就像學手機：
+### 為什麼學 Python？
+
+就像學智慧型手機：
 - 簡單操作就能做很多事
 - 全世界都在用
 - 直接上手，不用太複雜
 
-Python 就是程式界的「智慧型手機」！
+---
+
+## Python 版本
+
+**Python 2 vs 3：**
+
+```python
+# Python 2 (已停止支援)
+print "Hello"
+
+# Python 3 (目前版本)
+print("Hello")
 ```
+
+**建議：使用 Python 3.x**
 
 ---
 
-# Python 的歷史故事
+### 為什麼有兩個版本？
 
-**從 2.0 到 3.0 的大變革**
-
-**Python 2.x 時代 (2000-2020)：**
-```python
-# 舊版寫法
-print "Hello World"  # 沒有括號
-name = raw_input("Your name? ")  # 舊版輸入
-```
-
-**問題：**
-- 語法不一致
-- Unicode 支援不完整
-- 舊程式碼太多，難以改進
-
-**Python 3.x 時代 (2010-現在)：**
-```python
-# 新版寫法
-print("Hello World")  # 一定要括號
-name = input("Your name? ")  # 新版輸入
-```
-
-**💡 小提示：為什麼有 2.x 和 3.x？**
-```
 就像手機系統更新：
-- Android 舊版 vs 新版
 - 功能一樣，但新版更安全、更流暢
-- 舊版還能用，但大家都升級新版
-
-Python 3 就是「更好用的新版」！
-```
+- Python 3 是「更好用的新版」
 
 ---
 
-# 安裝 Python - Windows
+## 安裝 Python
+
+### Windows
 
 **推薦：從官網下載安裝**
 
@@ -176,7 +163,7 @@ pip --version
 
 ---
 
-# 安裝 Python - macOS
+### macOS
 
 **推薦：使用 Homebrew**
 
@@ -206,7 +193,7 @@ pip3 --version
 
 ---
 
-# 安裝 Python - Linux
+### Linux
 
 **使用 apt 套件管理器**
 
@@ -238,7 +225,9 @@ pyenv global 3.11.0
 
 ---
 
-# 你的第一個 Python 程式 - Mac/Linux
+## 你的第一個 Python 程式
+
+### Mac/Linux
 
 ```bash
 # 建立 hello.py 檔案
@@ -246,22 +235,11 @@ echo 'print("Hello, Python!")' > hello.py
 
 # 執行程式
 python3 hello.py
-# 輸出: Hello, Python!
-```
-
-**💡 小提示：print 是什麼？**
-```
-print 就像「說話」：
-- print("hello") = 「說 hello」
-- print(123) = 「說 123」
-- print(variable) = 「說出變數的內容」
-
-print 就是 Python 的「嘴巴」！
 ```
 
 ---
 
-# 你的第一個 Python 程式 - Windows
+### Windows
 
 ```powershell
 # 建立 hello.py 檔案
@@ -269,57 +247,48 @@ New-Item hello.py -Value 'print("Hello, Python!")'
 
 # 執行程式
 python hello.py
-# 輸出: Hello, Python!
-```
-
-**💡 小提示：print 是什麼？**
-```
-print 就像「說話」：
-- print("hello") = 「說 hello」
-- print(123) = 「說 123」
-- print(variable) = 「說出變數的內容」
-
-print 就是 Python 的「嘴巴」！
 ```
 
 ---
 
-# 變數與資料類型
+### print 是什麼？
 
-**變數就像手機的聯絡人，可以存各種資訊：**
+`print` 就像 Python 的「嘴巴」：
+- `print("hello")` → 說 hello
+- `print(123)` → 說 123
+- `print(variable)` → 說出變數的內容
+
+---
+
+## 變數與資料類型
 
 ```python
 # 文字 (字串)
 name = "小明"
-message = 'Hello World'
 
 # 數字
 age = 25
 height = 170.5
 
-# 是/否 (布林值)
+# 布林值
 is_student = True
-has_car = False
 
 # 印出來看看
-print(name)      # 小明
-print(age)       # 25
-print(is_student) # True
-```
-
-**💡 小提示：為什麼叫變數？**
-```
-想像手機聯絡人：
-- 名字 (變數名稱)
-- 存電話、email (資料)
-- 可以隨時改資訊
-
-變數就是「手機裡的聯絡人」！
+print(name, age, is_student)
 ```
 
 ---
 
-# 條件判斷
+### 變數是什麼？
+
+變數就像「手機聯絡人」：
+- 名字（變數名稱）
+- 存電話、email（資料）
+- 可以隨時改資訊
+
+---
+
+## 條件判斷
 
 **if-else 就像十字路口的選擇：**
 
@@ -348,9 +317,9 @@ Python 用縮排表示「誰聽誰的」：
 
 ---
 
-# 迴圈
+## 迴圈
 
-**for 迴圈：重複做事的好幫手**
+**for 迴圈：重複做事**
 
 ```python
 # 印出 1 到 5
@@ -382,9 +351,7 @@ print("猜對了！")
 
 ---
 
-# 函數
-
-**函數就像包裝好的工具箱：**
+## 函數
 
 ```python
 # 定義函數
@@ -396,26 +363,23 @@ def calculate_area(width, height):
 
 # 使用函數
 message = greet("小明")
-print(message)  # 哈囉，小明！
-
 area = calculate_area(10, 5)
-print(f"面積是 {area}")  # 面積是 50
-```
-
-**💡 小提示：為什麼要用函數？**
-```
-想像做菜：
-- 沒有函數：每次都要重新切菜
-- 有函數：用預切的菜包
-
-函數就是「可以重複用的工具」！
+print(message, area)
 ```
 
 ---
 
-# 模組與套件
+### 為什麼要用函數？
 
-**import 就像借用別人的工具：**
+想像做菜：
+- 沒有函數：每次都要重新切菜
+- 有函數：用預切的菜包
+
+函數就是「可以重複用的工具」
+
+---
+
+## 模組與套件
 
 ```python
 # 使用內建模組
@@ -424,73 +388,52 @@ import datetime
 
 # 產生隨機數字
 number = random.randint(1, 100)
-print(f"隨機數字：{number}")
 
 # 取得現在時間
 now = datetime.datetime.now()
-print(f"現在時間：{now}")
 
 # 取別名使用
-import numpy as np  # np 是 numpy 的簡稱
-```
-
-**💡 小提示：模組 vs 套件？**
-```
-模組 (module)：單一的 .py 檔案
-套件 (package)：包含多個模組的資料夾
-
-就像：
-- 模組 = 一個 app
-- 套件 = 整個 app 商店
+import numpy as np
 ```
 
 ---
 
-# 虛擬環境 (venv)：專案的私人空間
+### 模組 vs 套件
 
-**venv 就像每個專案的「私人房間」！**
+- 模組：單一的 `.py` 檔案（一個 app）
+- 套件：包含多個模組的資料夾（整個 app 商店）
 
-**沒有虛擬環境的問題：**
-```
-A 專案要 Python 3.8 + 舊版套件
-B 專案要 Python 3.10 + 新版套件
-結果：套件版本衝突，誰都不能跑！
-```
+---
 
-**有虛擬環境的解決方案：**
-```
-A 專案：自己的 venv，有自己的套件
-B 專案：自己的 venv，有自己的套件
-互不干擾，和平共處！
-```
+## 虛擬環境 (venv)
 
-**建立虛擬環境：**
+每個專案有獨立的套件環境
 
+**Windows：**
 ```powershell
-# Windows (PowerShell)
 Set-ExecutionPolicy Bypass -Scope Process -Force
 python -m venv myproject_env
 myproject_env\Scripts\activate
 ```
 
+**Mac/Linux：**
 ```bash
-# Mac/Linux
 python3 -m venv myproject_env
 source myproject_env/bin/activate
 ```
 
-**💡 小提示：為什麼叫「虛擬」環境？**
-```
-因為它不是真的「獨立電腦」，
-而是用檔案技巧騙過 Python，
-讓它以為自己在獨立的環境中。
+---
 
-就像手機的「訪客模式」一樣！
-```
+### 為什麼需要虛擬環境？
+
+就像每個專案的「私人房間」：
+- A 專案：自己的 venv，有自己的套件
+- B 專案：自己的 venv，有自己的套件
+- 互不干擾，和平共處
 
 ---
 
-# 套件管理：pip
+## 套件管理：pip
 
 **pip 就像 App Store，但專門裝 Python 套件！**
 
