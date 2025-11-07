@@ -14,20 +14,24 @@ paginate: true
 
 # 快速開始
 
-## 超新手先這樣做 - Mac/Linux (1/2)
+---
 
-**建立環境：**
+## 超新手先這樣做 - Mac/Linux (1/3)
 
 ```bash
-# 1) 建一個練習資料夾
+# 1) 建資料夾並進入
 mkdir ~/Desktop/my-first-python
 cd ~/Desktop/my-first-python
 
-# 2) 用 VSCode 打開
+# 2) 打開 VSCode
 code .
 ```
 
-**建立 `hello.py` 檔案，輸入：**
+---
+
+## 超新手先這樣做 - Mac/Linux (2/3)
+
+**建立 `hello.py`：**
 
 ```python
 print("Hello, Python!")
@@ -35,37 +39,39 @@ print("Hello, Python!")
 
 ---
 
-## 超新手先這樣做 - Mac/Linux (2/2)
+## 超新手先這樣做 - Mac/Linux (3/3)
 
-**執行程式：**
+**執行：**
 
 ```bash
 python3 hello.py
 ```
 
-**看到：**
+**輸出：**
 ```
 Hello, Python!
 ```
 
-成功！✅
+✅ 成功！
 
 ---
 
-## 超新手先這樣做 - Windows (1/2)
-
-**建立環境：**
+## 超新手先這樣做 - Windows (1/3)
 
 ```powershell
-# 1) 建一個練習資料夾
+# 1) 建資料夾並進入
 mkdir ~/Desktop/my-first-python
 cd ~/Desktop/my-first-python
 
-# 2) 用 VSCode 打開
+# 2) 打開 VSCode
 code .
 ```
 
-**建立 `hello.py` 檔案，輸入：**
+---
+
+## 超新手先這樣做 - Windows (2/3)
+
+**建立 `hello.py`：**
 
 ```python
 print("Hello, Python!")
@@ -73,20 +79,20 @@ print("Hello, Python!")
 
 ---
 
-## 超新手先這樣做 - Windows (2/2)
+## 超新手先這樣做 - Windows (3/3)
 
-**執行程式：**
+**執行：**
 
 ```powershell
 python hello.py
 ```
 
-**看到：**
+**輸出：**
 ```
 Hello, Python!
 ```
 
-成功！✅
+✅ 成功！
 
 ---
 
