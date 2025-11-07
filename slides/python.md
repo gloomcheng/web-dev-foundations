@@ -147,86 +147,42 @@ print("Hello")
 
 ### Windows
 
-**推薦：從官網下載安裝**
+1. 訪問 https://python.org/downloads/
+2. 下載並執行安裝程式
+3. ⚠️ **務必勾選「Add Python to PATH」**
 
-1. **訪問官網**：開啟瀏覽器到 https://python.org/downloads/
-2. **下載最新版本**：點擊 "Download Python 3.x.x"
-3. **執行安裝程式**：
-   - 務必勾選 **"Add Python to PATH"**
-   - 選擇 "Customize installation"
-   - 確保 pip 被選中
-4. **驗證安裝**：
-
+**驗證：**
 ```powershell
 python --version
-pip --version
 ```
-
-**替代方案：Microsoft Store**
-- 開啟 Microsoft Store
-- 搜尋 "Python"
-- 安裝官方 Python 版本
 
 ---
 
 ### macOS
 
-**推薦：使用 Homebrew**
-
-1. **安裝 Homebrew** (如果還沒裝)：
-
-```zsh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-2. **安裝 Python**：
-
+**使用 Homebrew：**
 ```zsh
 brew install python
 ```
 
-3. **驗證安裝**：
-
+**驗證：**
 ```zsh
 python3 --version
-pip3 --version
 ```
-
-**替代方案：從官網下載**
-- 訪問 https://python.org/downloads/
-- 下載 macOS installer (.pkg)
-- 雙擊執行安裝
 
 ---
 
 ### Linux
 
-**使用 apt 套件管理器**
-
+**使用 apt：**
 ```bash
-# 更新套件列表
 sudo apt update
-
-# 安裝 Python 3 和 pip
 sudo apt install python3 python3-pip
-
-# 驗證安裝
-python3 --version
-pip3 --version
 ```
 
-**進階：使用 pyenv 管理多版本**
-
+**驗證：**
 ```bash
-# 安裝 pyenv
-curl https://pyenv.run | bash
-
-# 重新開啟終端機，或執行
-source ~/.bashrc
-
-# 安裝特定版本 Python
-pyenv install 3.11.0
-pyenv global 3.11.0
+python3 --version
 ```
 
 ---
@@ -323,9 +279,9 @@ Python 用縮排表示「誰聽誰的」：
 
 ---
 
-## 迴圈
+## for 迴圈
 
-**for 迴圈：重複做事**
+重複做事的好幫手
 
 ```python
 # 印出 1 到 5
@@ -338,7 +294,11 @@ for fruit in fruits:
     print(f"我喜歡吃 {fruit}")
 ```
 
-**while 迴圈：條件重複**
+---
+
+## while 迴圈
+
+條件重複
 
 ```python
 # 猜數字遊戲
