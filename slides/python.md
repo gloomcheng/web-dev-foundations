@@ -228,16 +228,6 @@ python3 --version
 pip3 --version
 ```
 
-**進階：使用 pyenv 管理多版本**
-```bash
-# 安裝 pyenv
-curl https://pyenv.run | bash
-
-# 安裝特定版本
-pyenv install 3.11.0
-pyenv global 3.11.0
-```
-
 ---
 
 ## 你的第一個 Python 程式
