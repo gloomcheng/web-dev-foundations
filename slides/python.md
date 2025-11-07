@@ -295,30 +295,25 @@ print(name, age, is_student)
 
 ## 條件判斷
 
-**if-else 就像十字路口的選擇：**
-
 ```python
 age = int(input("你幾歲？"))
 
 if age >= 18:
     print("你可以投票！")
-    print("也可以開車！")
 elif age >= 13:
     print("你是青少年")
 else:
     print("你是小孩")
-    print("要聽爸爸媽媽的話！")
 ```
 
-**💡 小提示：縮排很重要！**
-```
+---
+
+### 縮排很重要！
+
 Python 用縮排表示「誰聽誰的」：
-- if 後面的程式要縮進 (聽 if 的)
+- if 後面的程式要縮進
 - else 也要對齊 if
 - 縮排錯了程式會壞掉
-
-就像聊天室的層層回覆一樣！
-```
 
 ---
 
@@ -444,17 +439,21 @@ source myproject_env/bin/activate
 
 ## 套件管理：pip
 
-**pip 就像 App Store，但專門裝 Python 套件！**
-
 ```bash
 # 安裝套件
-pip install requests     # 安裝網路請求套件
-pip install fastapi      # 安裝 web 框架
-pip install pandas       # 安裝資料分析套件
+pip install requests
+pip install fastapi
+pip install pandas
 
 # 安裝特定版本
 pip install requests==2.28.0
+```
 
+---
+
+### pip 常用指令
+
+```bash
 # 更新套件
 pip install --upgrade requests
 
@@ -466,15 +465,6 @@ pip list
 
 # 看套件資訊
 pip show requests
-```
-
-**💡 小提示：pip 是什麼的縮寫？**
-```
-Pip Installs Packages
-( pip 安裝套件 )
-
-就像 Google Play 一樣，
-pip 就是 Python 的 app 商店！
 ```
 
 ---
@@ -505,25 +495,26 @@ pip install -r requirements.txt
 
 # pyproject.toml：現代的管理方式
 
-**pyproject.toml：新世代的專案設定檔**
+---
+
+## pyproject.toml 基本結構
 
 ```toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [project]
 name = "my-awesome-project"
 version = "0.1.0"
-description = "一個超棒的專案"
-readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
     "fastapi>=0.100.0",
-    "uvicorn>=0.23.0",
-    "requests>=2.28.0"
+    "uvicorn>=0.23.0"
 ]
+```
 
+---
+
+## 進階配置
+
+```toml
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
@@ -534,7 +525,10 @@ dev = [
 line-length = 88
 ```
 
-**安裝依賴：**
+---
+
+## 安裝依賴
+
 ```bash
 # 安裝基本依賴
 pip install -e .
@@ -593,17 +587,22 @@ pip install -e ".[dev]"
 
 # 開發環境設定步驟
 
-**新手完整設定指南：**
+---
+
+## 步驟 1-2：安裝基礎工具
 
 **1. 安裝 Python**
 ```bash
-# 確認安裝
-python --version  # 應該是 3.8 或以上
+python --version  # 應該是 3.8+
 ```
 
-**2. 安裝程式碼編輯器**
+**2. 安裝 VSCode**
 - 下載 VSCode
 - 安裝 Python 擴充套件
+
+---
+
+## 步驟 3-4：建立專案
 
 **3. 建立專案資料夾**
 ```bash
@@ -613,59 +612,73 @@ cd my-first-project
 
 **4. 建立虛擬環境**
 ```bash
-# 建立虛擬環境
 python -m venv venv
 ```
 
-**5. 啟動虛擬環境**
+---
+
+## 步驟 5：啟動虛擬環境
+
+**Windows：**
 ```powershell
-# Windows (PowerShell)
 Set-ExecutionPolicy Bypass -Scope Process -Force
 venv\Scripts\activate
 ```
 
+**Mac/Linux：**
 ```bash
-# Mac/Linux
 source venv/bin/activate
 ```
 
-**6. 初始化專案**
+---
+
+## 步驟 6：初始化專案結構
+
 ```bash
-# 建立 pyproject.toml
-# 建立 src/ 資料夾放程式碼
-# 建立 tests/ 資料夾放測試
+# 建立資料夾
+mkdir src tests
+
+# 建立檔案
+touch pyproject.toml
+touch src/__init__.py
 ```
 
 ---
 
 # 常見錯誤與解決方案
 
-**❌ 錯誤：ModuleNotFoundError**
-```
-原因：忘記安裝套件或啟動虛擬環境
-解決：
-1. 檢查是否在虛擬環境中 (提示字元有 (venv))
-2. pip install 缺少的套件
-3. 或 pip install -r requirements.txt
-```
+---
 
-**❌ 錯誤：SyntaxError**
-```
-原因：語法錯誤
-解決：
+## ModuleNotFoundError
+
+**原因：** 忘記安裝套件或啟動虛擬環境
+
+**解決：**
+1. 檢查是否在虛擬環境中
+2. `pip install 套件名稱`
+3. 或 `pip install -r requirements.txt`
+
+---
+
+## SyntaxError
+
+**原因：** 語法錯誤
+
+**解決：**
 1. 檢查括號是否成對
 2. 檢查縮排是否正確
 3. 檢查字串引號是否匹配
-```
 
-**❌ 錯誤：IndentationError**
-```
-原因：縮排錯誤 (Python 最常見錯誤)
-解決：
+---
+
+## IndentationError
+
+**原因：** 縮排錯誤（Python 最常見）
+
+**解決：**
 1. 用空格不要用 Tab
 2. 同一層級縮排要一樣
-3. 看看別人的程式碼怎麼縮排
-```
+3. 參考別人的程式碼
 
 ---
 
@@ -695,7 +708,10 @@ source venv/bin/activate
 
 # Python Cheat Sheet
 
-**基本語法：**
+---
+
+## 基本語法
+
 ```python
 # 變數
 name = "小明"
@@ -704,13 +720,17 @@ age = 25
 # 條件
 if age >= 18:
     print("成年")
-else:
-    print("未成年")
 
 # 迴圈
 for i in range(5):
     print(i)
+```
 
+---
+
+## 函數與類別
+
+```python
 # 函數
 def greet(name):
     return f"哈囉 {name}"
@@ -721,7 +741,10 @@ class Person:
         self.name = name
 ```
 
-**常用模組：**
+---
+
+## 常用模組
+
 ```python
 import os        # 檔案操作
 import sys       # 系統相關
