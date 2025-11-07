@@ -12,7 +12,9 @@ paginate: true
 
 ---
 
-# 超新手最小路徑 - Mac/Linux (1/2)
+# 快速開始
+
+## 超新手最小路徑 - Mac/Linux (1/2)
 
 **環境設置：**
 
@@ -30,7 +32,7 @@ pip install "fastapi[standard]"
 
 ---
 
-# 超新手最小路徑 - Mac/Linux (2/3)
+## 超新手最小路徑 - Mac/Linux (2/3)
 
 **建立 `main.py`：**
 
@@ -46,7 +48,7 @@ def home():
 
 ---
 
-# 超新手最小路徑 - Mac/Linux (3/3)
+## 超新手最小路徑 - Mac/Linux (3/3)
 
 **啟動：**
 
@@ -59,7 +61,7 @@ fastapi dev main.py
 
 ---
 
-# 超新手最小路徑 - Windows (1/3)
+## 超新手最小路徑 - Windows (1/3)
 
 **環境設置：**
 
@@ -80,7 +82,7 @@ pip install "fastapi[standard]"
 
 ---
 
-# 超新手最小路徑 - Windows (2/3)
+## 超新手最小路徑 - Windows (2/3)
 
 **建立 `main.py`：**
 
@@ -96,7 +98,7 @@ def home():
 
 ---
 
-# 超新手最小路徑 - Windows (3/3)
+## 超新手最小路徑 - Windows (3/3)
 
 **啟動：**
 
@@ -109,7 +111,7 @@ fastapi dev main.py
 
 ---
 
-# 常見卡關與疑難排解
+## 常見卡關與疑難排解
 
 **啟動問題：**
 - 連不到 8000 → 看終端機是否正在跑，或被占用改成 `--port 8001`
@@ -120,6 +122,8 @@ fastapi dev main.py
 - 確保 JSON 中所有字串使用雙引號 `"`
 
 ---
+
+# 基礎概念
 
 ## 什麼是 FastAPI?
 
@@ -133,7 +137,9 @@ FastAPI 是一個 Python Web 框架，用來打造 API。
 
 ---
 
-# 安裝 FastAPI - Windows
+## 安裝 FastAPI
+
+### Windows
 
 ```powershell
 # 設定權限
@@ -149,7 +155,7 @@ pip install "fastapi[standard]"
 
 ---
 
-# 安裝 FastAPI - macOS
+### macOS
 
 ```zsh
 # 建立虛擬環境
@@ -162,7 +168,7 @@ pip install "fastapi[standard]"
 
 ---
 
-# FastAPI 包含的工具
+### 包含的工具
 
 - `fastapi` - 主要框架
 - `uvicorn` - 網路伺服器
@@ -195,7 +201,9 @@ pip install "fastapi[standard]"
 
 ---
 
-# 第一步：建立 API - Windows
+## 第一步：建立 API
+
+### Windows
 
 ```powershell
 # 建立 main.py
@@ -215,7 +223,7 @@ fastapi dev main.py
 
 ---
 
-# 第一步：建立 API - macOS
+### macOS
 
 ```zsh
 # 建立 main.py
@@ -303,7 +311,7 @@ def read_item(item_id: int):
 
 ---
 
-# 路徑參數：字串類型
+### 路徑參數：字串類型
 
 ```python
 @app.get("/users/{user_id}")
@@ -350,7 +358,7 @@ def search(q: str):              # 必填
 
 ---
 
-# 查詢參數：必要參數
+### 查詢參數：必要參數
 
 ```python
 @app.get("/search/")
@@ -428,7 +436,7 @@ def create_item(item: Item):
 
 ---
 
-# 查詢參數與字串驗證
+## 查詢參數與字串驗證
 
 ```python
 from fastapi import FastAPI
@@ -447,7 +455,7 @@ def read_items(q: str | None = None):
 
 ---
 
-# 路徑參數與數值驗證
+## 路徑參數與數值驗證
 
 ```python
 from fastapi import FastAPI
@@ -469,7 +477,7 @@ GET /items/three → 錯誤 (不是數字)
 
 ---
 
-# 查詢參數模型
+## 查詢參數模型
 
 ```python
 from fastapi import FastAPI
@@ -491,7 +499,7 @@ def read_items(filter_query: FilterParams):
 
 ---
 
-# 請求主體：多個參數
+## 請求主體：多個參數
 
 ```python
 from fastapi import FastAPI, Path
@@ -520,7 +528,7 @@ def update_item(
 
 ---
 
-# 請求主體：欄位設定
+## 請求主體：欄位設定
 
 ```python
 from fastapi import FastAPI
@@ -542,7 +550,7 @@ def update_item(item_id: int, item: Item):
 
 ---
 
-# 巢狀模型 (Nested Models)
+## 巢狀模型 (Nested Models)
 
 ```python
 from fastapi import FastAPI
@@ -568,7 +576,7 @@ def create_item(item: Item):
 
 ---
 
-# 巢狀模型：請求範例
+### 巢狀模型：請求範例
 
 ```json
 {
@@ -585,7 +593,7 @@ def create_item(item: Item):
 
 ---
 
-# 宣告請求範例資料
+## 宣告請求範例資料
 
 ```python
 from fastapi import FastAPI
@@ -607,7 +615,7 @@ def create_item(item: Item):
 
 ---
 
-# 額外資料類型
+## 額外資料類型
 
 ```python
 from datetime import datetime
@@ -634,7 +642,7 @@ def update_item(
 
 ---
 
-# Cookie 參數
+## Cookie 參數
 
 ```python
 from fastapi import FastAPI, Cookie
@@ -650,7 +658,7 @@ def read_items(ads_id: str | None = Cookie(default=None)):
 
 ---
 
-# Header 參數
+## Header 參數
 
 ```python
 from fastapi import FastAPI, Header
@@ -666,7 +674,7 @@ def read_items(user_agent: str | None = Header(default=None)):
 
 ---
 
-# Cookie 參數模型
+## Cookie 參數模型
 
 ```python
 from fastapi import FastAPI, Cookie
@@ -687,7 +695,7 @@ def read_items(cookies: Cookies):
 
 ---
 
-# Header 參數模型
+## Header 參數模型
 
 ```python
 from fastapi import FastAPI, Header
@@ -711,7 +719,7 @@ def read_items(headers: CommonHeaders):
 
 ---
 
-# 回應模型：回傳類型
+## 回應模型：回傳類型
 
 ```python
 from fastapi import FastAPI
@@ -742,7 +750,7 @@ def create_item(item: Item) -> Item:
 
 ---
 
-# 額外模型
+## 額外模型
 
 ```python
 from fastapi import FastAPI
@@ -770,7 +778,7 @@ def create_user(user: UserIn):
 
 ---
 
-# 回應狀態碼
+## 回應狀態碼
 
 ```python
 from fastapi import FastAPI
@@ -800,7 +808,7 @@ def create_item(name: str):
 
 ---
 
-# 表單資料 (Form Data)
+## 表單資料 (Form Data)
 
 ```python
 from fastapi import FastAPI, Form
@@ -816,7 +824,7 @@ def login(username: str = Form(), password: str = Form()):
 
 ---
 
-# 請求檔案
+## 請求檔案
 
 ```python
 from fastapi import FastAPI, File, UploadFile
@@ -836,7 +844,7 @@ def create_upload_file(file: UploadFile):
 
 ---
 
-# 請求表單與檔案
+## 請求表單與檔案
 
 ```python
 from fastapi import FastAPI, File, Form, UploadFile
@@ -860,7 +868,7 @@ def create_file(
 
 ---
 
-# 錯誤處理
+## 錯誤處理
 
 ```python
 from fastapi import FastAPI, HTTPException
@@ -878,7 +886,7 @@ def read_item(item_id: int):
 
 ---
 
-# 路徑操作設定
+## 路徑操作設定
 
 ```python
 from fastapi import FastAPI
@@ -899,7 +907,7 @@ def read_items():
 
 ---
 
-# JSON 相容編碼器
+## JSON 相容編碼器
 
 ```python
 from fastapi import FastAPI
@@ -919,7 +927,7 @@ def read_items():
 
 ---
 
-# 請求主體：更新
+## 請求主體：更新
 
 ```python
 from fastapi import FastAPI
@@ -941,7 +949,7 @@ def update_item(item_id: int, item: Item):
 
 ---
 
-# 依賴注入簡介
+## 依賴注入簡介
 
 ```python
 from fastapi import FastAPI, Depends
@@ -985,7 +993,7 @@ FastAPI 會自動先執行檢查，然後才讓你進來
 
 ---
 
-# 安全性：第一步
+## 安全性：第一步
 
 ```python
 from fastapi import FastAPI, Depends, HTTPException, status
@@ -1004,7 +1012,7 @@ def read_current_user(credentials: HTTPBasicCredentials = Depends(security)):
 
 ---
 
-# 常見誤區與除錯
+## 常見誤區與除錯
 
 **🚨 五大常見錯誤：**
 
@@ -1026,7 +1034,7 @@ def read_current_user(credentials: HTTPBasicCredentials = Depends(security)):
 
 ---
 
-# ⚠️ 命令列的危險地雷區
+## ⚠️ 命令列的危險地雷區
 
 **這些指令可能會摧毀你的電腦！**
 
@@ -1042,7 +1050,7 @@ def read_current_user(credentials: HTTPBasicCredentials = Depends(security)):
 
 ---
 
-# 🚨 絕對不要執行的指令！
+### 🚨 絕對不要執行的指令！
 
 **檔案系統毀滅者：**
 - `rm -rf /` 或 `rm -rf ~` - 刪除所有檔案
@@ -1088,7 +1096,7 @@ def read_current_user(credentials: HTTPBasicCredentials = Depends(security)):
 
 ---
 
-# 🛡️ 安全使用命令列的守則
+### 🛡️ 安全使用命令列的守則
 
 **🔒 三思而後行：**
 - 執行前先想：「這個指令會刪除什麼？」
@@ -1118,7 +1126,7 @@ rm -i 檔案名
 
 ---
 
-# 命令列學習心態
+### 命令列學習心態
 
 **💡 學習心態：**
 命令列很強大，但也像雙刃劍。
@@ -1131,7 +1139,7 @@ rm -i 檔案名
 
 ---
 
-# FastAPI 快速參考表
+## FastAPI 快速參考表
 
 **新手必備指令：**
 
@@ -1175,7 +1183,7 @@ def func(q: str = None, limit: int = 10):
 
 ---
 
-# 請求主體參數
+### 請求主體參數
 
 **請求主體參數：**
 ```python
