@@ -10,70 +10,81 @@ paginate: true
 
 # Python 程式設計：從零開始
 
-# 超新手先這樣做（10 分鐘搞定）
+---
 
-## Mac/Linux 用戶
+# 超新手先這樣做 - Mac/Linux (1/2)
 
-- 目標：在你電腦上「看到 Python 說話」
-- 步驟跟著做就可以了：
+**建立環境：**
 
 ```bash
 # 1) 建一個練習資料夾
-mkdir ~/Desktop/my-first-python && cd ~/Desktop/my-first-python
+mkdir ~/Desktop/my-first-python
+cd ~/Desktop/my-first-python
 
-# 2) 用 VSCode 打開（建議）
+# 2) 用 VSCode 打開
 code .
 ```
 
-在 VSCode 新增檔案 `hello.py`，輸入：
+**建立 `hello.py` 檔案，輸入：**
 
 ```python
 print("Hello, Python!")
 ```
-
-在 VSCode 內建終端機執行：
-
-```bash
-python3 hello.py  # 看到 Hello, Python! 就成功
-```
-
-- 小提醒：
-  - macOS 需用 `python3` 而非 `python`
-  - 如果出現「找不到 python3」→ 先安裝 Python，或重開 VSCode 再試
 
 ---
 
-# 超新手先這樣做（10 分鐘搞定）
+# 超新手先這樣做 - Mac/Linux (2/2)
 
-## Windows (PowerShell) 用戶
+**執行程式：**
 
-- 目標：在你電腦上「看到 Python 說話」
-- 步驟跟著做就可以了：
+```bash
+python3 hello.py
+```
+
+**看到：**
+```
+Hello, Python!
+```
+
+成功！✅
+
+---
+
+# 超新手先這樣做 - Windows (1/2)
+
+**建立環境：**
 
 ```powershell
 # 1) 建一個練習資料夾
-mkdir ~/Desktop/my-first-python; cd ~/Desktop/my-first-python
+mkdir ~/Desktop/my-first-python
+cd ~/Desktop/my-first-python
 
-# 2) 用 VSCode 打開（建議）
+# 2) 用 VSCode 打開
 code .
 ```
 
-在 VSCode 新增檔案 `hello.py`，輸入：
+**建立 `hello.py` 檔案，輸入：**
 
 ```python
 print("Hello, Python!")
 ```
 
-在 VSCode 內建終端機執行：
+---
+
+# 超新手先這樣做 - Windows (2/2)
+
+**執行程式：**
 
 ```powershell
-python hello.py  # 看到 Hello, Python! 就成功
-# 或 py hello.py
+python hello.py
 ```
 
-- 小提醒：
-  - Windows 可用 `python` 或 `py` 指令
-  - 如果出現「找不到 python」→ 先安裝 Python，或重開 VSCode 再試
+**看到：**
+```
+Hello, Python!
+```
+
+成功！✅
 
 ---
 
