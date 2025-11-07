@@ -145,44 +145,97 @@ print("Hello")
 
 ## 安裝 Python
 
-### Windows
+---
+
+### Windows (1/2)
+
+**步驟：**
 
 1. 訪問 https://python.org/downloads/
-2. 下載並執行安裝程式
-3. ⚠️ **務必勾選「Add Python to PATH」**
-
-**驗證：**
-```powershell
-python --version
-```
+2. 點擊「Download Python 3.x.x」
+3. 執行安裝程式
+4. ⚠️ **務必勾選「Add Python to PATH」**
+5. 選擇「Customize installation」
+6. 確保 pip 被選中
 
 ---
 
-### macOS
+### Windows (2/2)
 
-**使用 Homebrew：**
+**驗證安裝：**
+```powershell
+python --version
+pip --version
+```
+
+**替代方案：Microsoft Store**
+- 開啟 Microsoft Store
+- 搜尋「Python」
+- 安裝官方 Python 版本
+
+---
+
+### macOS (1/2)
+
+**方案 1：使用 Homebrew（推薦）**
+
+安裝 Homebrew（如果還沒裝）：
+```zsh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+安裝 Python：
 ```zsh
 brew install python
 ```
 
-**驗證：**
+---
+
+### macOS (2/2)
+
+**驗證安裝：**
 ```zsh
 python3 --version
+pip3 --version
+```
+
+**方案 2：從官網下載**
+- 訪問 https://python.org/downloads/
+- 下載 macOS installer (.pkg)
+- 雙擊執行安裝
+
+---
+
+### Linux (1/2)
+
+**使用 apt 套件管理器：**
+
+```bash
+# 更新套件列表
+sudo apt update
+
+# 安裝 Python 3 和 pip
+sudo apt install python3 python3-pip
 ```
 
 ---
 
-### Linux
+### Linux (2/2)
 
-**使用 apt：**
-```bash
-sudo apt update
-sudo apt install python3 python3-pip
-```
-
-**驗證：**
+**驗證安裝：**
 ```bash
 python3 --version
+pip3 --version
+```
+
+**進階：使用 pyenv 管理多版本**
+```bash
+# 安裝 pyenv
+curl https://pyenv.run | bash
+
+# 安裝特定版本
+pyenv install 3.11.0
+pyenv global 3.11.0
 ```
 
 ---
