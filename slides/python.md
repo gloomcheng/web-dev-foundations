@@ -1,0 +1,803 @@
+---
+marp: true
+theme: gaia
+_class: lead
+backgroundColor: #fff
+backgroundImage: url('https://marp.app/assets/hero-background.svg')
+size: 16:9
+paginate: true
+---
+
+# Python 程式設計：從零開始
+
+# 超新手先這樣做（10 分鐘搞定）
+
+## Mac/Linux 用戶
+
+- 目標：在你電腦上「看到 Python 說話」
+- 步驟跟著做就可以了：
+
+```bash
+# 1) 建一個練習資料夾
+mkdir ~/Desktop/my-first-python && cd ~/Desktop/my-first-python
+
+# 2) 用 VSCode 打開（建議）
+code .
+```
+
+在 VSCode 新增檔案 `hello.py`，輸入：
+
+```python
+print("Hello, Python!")
+```
+
+在 VSCode 內建終端機執行：
+
+```bash
+python3 hello.py  # 看到 Hello, Python! 就成功
+```
+
+- 小提醒：
+  - macOS 需用 `python3` 而非 `python`
+  - 如果出現「找不到 python3」→ 先安裝 Python，或重開 VSCode 再試
+
+---
+
+# 超新手先這樣做（10 分鐘搞定）
+
+## Windows (PowerShell) 用戶
+
+- 目標：在你電腦上「看到 Python 說話」
+- 步驟跟著做就可以了：
+
+```powershell
+# 1) 建一個練習資料夾
+mkdir ~/Desktop/my-first-python; cd ~/Desktop/my-first-python
+
+# 2) 用 VSCode 打開（建議）
+code .
+```
+
+在 VSCode 新增檔案 `hello.py`，輸入：
+
+```python
+print("Hello, Python!")
+```
+
+在 VSCode 內建終端機執行：
+
+```powershell
+python hello.py  # 看到 Hello, Python! 就成功
+# 或 py hello.py
+```
+
+- 小提醒：
+  - Windows 可用 `python` 或 `py` 指令
+  - 如果出現「找不到 python」→ 先安裝 Python，或重開 VSCode 再試
+
+---
+
+# 什麼是 Python？
+
+**Python 是一個超友善的程式語言！**
+
+想像你在跟電腦聊天，用簡單的英文句子指揮它做事。
+
+**為什麼叫做 Python？**
+- 向英國喜劇團體「Monty Python」致敬
+- 像蛇一樣靈活，但不會咬人
+- 簡單易學，像兒童的積木
+
+**Python 的超能力：**
+- 🎯 **簡單好懂**：程式碼像說話
+- 🚀 **什麼都能做**：網頁、遊戲、數據分析
+- 👥 **大家都在用**：資源超多
+- 🛠️ **工具一堆**：有很多現成工具
+
+**💡 小提示：為什麼學 Python？**
+```
+就像學手機：
+- 簡單操作就能做很多事
+- 全世界都在用
+- 直接上手，不用太複雜
+
+Python 就是程式界的「智慧型手機」！
+```
+
+---
+
+# Python 的歷史故事
+
+**從 2.0 到 3.0 的大變革**
+
+**Python 2.x 時代 (2000-2020)：**
+```python
+# 舊版寫法
+print "Hello World"  # 沒有括號
+name = raw_input("Your name? ")  # 舊版輸入
+```
+
+**問題：**
+- 語法不一致
+- Unicode 支援不完整
+- 舊程式碼太多，難以改進
+
+**Python 3.x 時代 (2010-現在)：**
+```python
+# 新版寫法
+print("Hello World")  # 一定要括號
+name = input("Your name? ")  # 新版輸入
+```
+
+**💡 小提示：為什麼有 2.x 和 3.x？**
+```
+就像手機系統更新：
+- Android 舊版 vs 新版
+- 功能一樣，但新版更安全、更流暢
+- 舊版還能用，但大家都升級新版
+
+Python 3 就是「更好用的新版」！
+```
+
+---
+
+# 安裝 Python - Windows
+
+**推薦：從官網下載安裝**
+
+1. **訪問官網**：開啟瀏覽器到 https://python.org/downloads/
+2. **下載最新版本**：點擊 "Download Python 3.x.x"
+3. **執行安裝程式**：
+   - 務必勾選 **"Add Python to PATH"**
+   - 選擇 "Customize installation"
+   - 確保 pip 被選中
+4. **驗證安裝**：
+
+```powershell
+python --version
+pip --version
+```
+
+**替代方案：Microsoft Store**
+- 開啟 Microsoft Store
+- 搜尋 "Python"
+- 安裝官方 Python 版本
+
+---
+
+# 安裝 Python - macOS
+
+**推薦：使用 Homebrew**
+
+1. **安裝 Homebrew** (如果還沒裝)：
+
+```zsh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+2. **安裝 Python**：
+
+```zsh
+brew install python
+```
+
+3. **驗證安裝**：
+
+```zsh
+python3 --version
+pip3 --version
+```
+
+**替代方案：從官網下載**
+- 訪問 https://python.org/downloads/
+- 下載 macOS installer (.pkg)
+- 雙擊執行安裝
+
+---
+
+# 安裝 Python - Linux
+
+**使用 apt 套件管理器**
+
+```bash
+# 更新套件列表
+sudo apt update
+
+# 安裝 Python 3 和 pip
+sudo apt install python3 python3-pip
+
+# 驗證安裝
+python3 --version
+pip3 --version
+```
+
+**進階：使用 pyenv 管理多版本**
+
+```bash
+# 安裝 pyenv
+curl https://pyenv.run | bash
+
+# 重新開啟終端機，或執行
+source ~/.bashrc
+
+# 安裝特定版本 Python
+pyenv install 3.11.0
+pyenv global 3.11.0
+```
+
+---
+
+# 你的第一個 Python 程式 - Mac/Linux
+
+```bash
+# 建立 hello.py 檔案
+echo 'print("Hello, Python!")' > hello.py
+
+# 執行程式
+python3 hello.py
+# 輸出: Hello, Python!
+```
+
+**💡 小提示：print 是什麼？**
+```
+print 就像「說話」：
+- print("hello") = 「說 hello」
+- print(123) = 「說 123」
+- print(variable) = 「說出變數的內容」
+
+print 就是 Python 的「嘴巴」！
+```
+
+---
+
+# 你的第一個 Python 程式 - Windows
+
+```powershell
+# 建立 hello.py 檔案
+New-Item hello.py -Value 'print("Hello, Python!")'
+
+# 執行程式
+python hello.py
+# 輸出: Hello, Python!
+```
+
+**💡 小提示：print 是什麼？**
+```
+print 就像「說話」：
+- print("hello") = 「說 hello」
+- print(123) = 「說 123」
+- print(variable) = 「說出變數的內容」
+
+print 就是 Python 的「嘴巴」！
+```
+
+---
+
+# 變數與資料類型
+
+**變數就像手機的聯絡人，可以存各種資訊：**
+
+```python
+# 文字 (字串)
+name = "小明"
+message = 'Hello World'
+
+# 數字
+age = 25
+height = 170.5
+
+# 是/否 (布林值)
+is_student = True
+has_car = False
+
+# 印出來看看
+print(name)      # 小明
+print(age)       # 25
+print(is_student) # True
+```
+
+**💡 小提示：為什麼叫變數？**
+```
+想像手機聯絡人：
+- 名字 (變數名稱)
+- 存電話、email (資料)
+- 可以隨時改資訊
+
+變數就是「手機裡的聯絡人」！
+```
+
+---
+
+# 條件判斷
+
+**if-else 就像十字路口的選擇：**
+
+```python
+age = int(input("你幾歲？"))
+
+if age >= 18:
+    print("你可以投票！")
+    print("也可以開車！")
+elif age >= 13:
+    print("你是青少年")
+else:
+    print("你是小孩")
+    print("要聽爸爸媽媽的話！")
+```
+
+**💡 小提示：縮排很重要！**
+```
+Python 用縮排表示「誰聽誰的」：
+- if 後面的程式要縮進 (聽 if 的)
+- else 也要對齊 if
+- 縮排錯了程式會壞掉
+
+就像聊天室的層層回覆一樣！
+```
+
+---
+
+# 迴圈
+
+**for 迴圈：重複做事的好幫手**
+
+```python
+# 印出 1 到 5
+for i in range(1, 6):
+    print(f"這是第 {i} 次")
+
+# 走訪清單
+fruits = ["蘋果", "香蕉", "橘子"]
+for fruit in fruits:
+    print(f"我喜歡吃 {fruit}")
+```
+
+**while 迴圈：條件重複**
+
+```python
+# 猜數字遊戲
+secret = 42
+guess = 0
+
+while guess != secret:
+    guess = int(input("猜一個數字："))
+    if guess < secret:
+        print("太小了！")
+    elif guess > secret:
+        print("太大了！")
+
+print("猜對了！")
+```
+
+---
+
+# 函數
+
+**函數就像包裝好的工具箱：**
+
+```python
+# 定義函數
+def greet(name):
+    return f"哈囉，{name}！"
+
+def calculate_area(width, height):
+    return width * height
+
+# 使用函數
+message = greet("小明")
+print(message)  # 哈囉，小明！
+
+area = calculate_area(10, 5)
+print(f"面積是 {area}")  # 面積是 50
+```
+
+**💡 小提示：為什麼要用函數？**
+```
+想像做菜：
+- 沒有函數：每次都要重新切菜
+- 有函數：用預切的菜包
+
+函數就是「可以重複用的工具」！
+```
+
+---
+
+# 模組與套件
+
+**import 就像借用別人的工具：**
+
+```python
+# 使用內建模組
+import random
+import datetime
+
+# 產生隨機數字
+number = random.randint(1, 100)
+print(f"隨機數字：{number}")
+
+# 取得現在時間
+now = datetime.datetime.now()
+print(f"現在時間：{now}")
+
+# 取別名使用
+import numpy as np  # np 是 numpy 的簡稱
+```
+
+**💡 小提示：模組 vs 套件？**
+```
+模組 (module)：單一的 .py 檔案
+套件 (package)：包含多個模組的資料夾
+
+就像：
+- 模組 = 一個 app
+- 套件 = 整個 app 商店
+```
+
+---
+
+# 虛擬環境 (venv)：專案的私人空間
+
+**venv 就像每個專案的「私人房間」！**
+
+**沒有虛擬環境的問題：**
+```
+A 專案要 Python 3.8 + 舊版套件
+B 專案要 Python 3.10 + 新版套件
+結果：套件版本衝突，誰都不能跑！
+```
+
+**有虛擬環境的解決方案：**
+```
+A 專案：自己的 venv，有自己的套件
+B 專案：自己的 venv，有自己的套件
+互不干擾，和平共處！
+```
+
+**建立虛擬環境：**
+
+```powershell
+# Windows (PowerShell)
+Set-ExecutionPolicy Bypass -Scope Process -Force
+python -m venv myproject_env
+myproject_env\Scripts\activate
+```
+
+```bash
+# Mac/Linux
+python3 -m venv myproject_env
+source myproject_env/bin/activate
+```
+
+**💡 小提示：為什麼叫「虛擬」環境？**
+```
+因為它不是真的「獨立電腦」，
+而是用檔案技巧騙過 Python，
+讓它以為自己在獨立的環境中。
+
+就像手機的「訪客模式」一樣！
+```
+
+---
+
+# 套件管理：pip
+
+**pip 就像 App Store，但專門裝 Python 套件！**
+
+```bash
+# 安裝套件
+pip install requests     # 安裝網路請求套件
+pip install fastapi      # 安裝 web 框架
+pip install pandas       # 安裝資料分析套件
+
+# 安裝特定版本
+pip install requests==2.28.0
+
+# 更新套件
+pip install --upgrade requests
+
+# 移除套件
+pip uninstall requests
+
+# 看已安裝的套件
+pip list
+
+# 看套件資訊
+pip show requests
+```
+
+**💡 小提示：pip 是什麼的縮寫？**
+```
+Pip Installs Packages
+( pip 安裝套件 )
+
+就像 Google Play 一樣，
+pip 就是 Python 的 app 商店！
+```
+
+---
+
+# 依賴管理檔案
+
+**requirements.txt：舊版的管理方式**
+
+```txt
+# requirements.txt
+requests==2.28.0
+fastapi==0.100.0
+uvicorn==0.23.0
+pandas>=1.5.0
+```
+
+**安裝所有依賴：**
+```bash
+pip install -r requirements.txt
+```
+
+**問題：**
+- 只記錄套件名稱和版本
+- 沒有專案基本資訊
+- 無法指定 Python 版本
+
+---
+
+# pyproject.toml：現代的管理方式
+
+**pyproject.toml：新世代的專案設定檔**
+
+```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "my-awesome-project"
+version = "0.1.0"
+description = "一個超棒的專案"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "requests>=2.28.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0"
+]
+
+[tool.black]
+line-length = 88
+```
+
+**安裝依賴：**
+```bash
+# 安裝基本依賴
+pip install -e .
+
+# 安裝開發依賴
+pip install -e ".[dev]"
+```
+
+---
+
+# 比較：requirements.txt vs pyproject.toml
+
+| 功能 | requirements.txt | pyproject.toml |
+|------|------------------|----------------|
+| 套件版本 | ✅ | ✅ |
+| 專案資訊 | ❌ | ✅ |
+| Python 版本要求 | ❌ | ✅ |
+| 選用依賴 | ❌ | ✅ |
+| 工具設定 | ❌ | ✅ |
+| 現代化 | 舊版 | 新版 |
+
+**💡 小提示：為什麼要有這些檔案？**
+```
+想像組裝電腦：
+- requirements.txt = 「要哪些零件」
+- pyproject.toml = 「整台電腦的組裝圖」
+
+新版 pyproject.toml 包含更多資訊，
+讓專案更好管，也更容易跟別人分享！
+```
+
+---
+
+# Python 開發工具大集合
+
+**程式碼編輯器：**
+- **VSCode**：免費，超強大，Python 支援一流
+- **PyCharm**：專業 IDE，功能完整但收費
+- **Sublime Text**：輕量快速
+
+**版本管理：**
+- **pyenv**：管理多個 Python 版本
+- **conda**：科學計算環境管理
+
+**程式碼品質：**
+- **black**：自動格式化程式碼
+- **flake8**：檢查程式碼品質
+- **mypy**：類型檢查
+
+**測試工具：**
+- **pytest**：現代化測試框架
+- **unittest**：內建測試框架
+
+---
+
+# 開發環境設定步驟
+
+**新手完整設定指南：**
+
+**1. 安裝 Python**
+```bash
+# 確認安裝
+python --version  # 應該是 3.8 或以上
+```
+
+**2. 安裝程式碼編輯器**
+- 下載 VSCode
+- 安裝 Python 擴充套件
+
+**3. 建立專案資料夾**
+```bash
+mkdir my-first-project
+cd my-first-project
+```
+
+**4. 建立虛擬環境**
+```bash
+# 建立虛擬環境
+python -m venv venv
+```
+
+**5. 啟動虛擬環境**
+```powershell
+# Windows (PowerShell)
+Set-ExecutionPolicy Bypass -Scope Process -Force
+venv\Scripts\activate
+```
+
+```bash
+# Mac/Linux
+source venv/bin/activate
+```
+
+**6. 初始化專案**
+```bash
+# 建立 pyproject.toml
+# 建立 src/ 資料夾放程式碼
+# 建立 tests/ 資料夾放測試
+```
+
+---
+
+# 常見錯誤與解決方案
+
+**❌ 錯誤：ModuleNotFoundError**
+```
+原因：忘記安裝套件或啟動虛擬環境
+解決：
+1. 檢查是否在虛擬環境中 (提示字元有 (venv))
+2. pip install 缺少的套件
+3. 或 pip install -r requirements.txt
+```
+
+**❌ 錯誤：SyntaxError**
+```
+原因：語法錯誤
+解決：
+1. 檢查括號是否成對
+2. 檢查縮排是否正確
+3. 檢查字串引號是否匹配
+```
+
+**❌ 錯誤：IndentationError**
+```
+原因：縮排錯誤 (Python 最常見錯誤)
+解決：
+1. 用空格不要用 Tab
+2. 同一層級縮排要一樣
+3. 看看別人的程式碼怎麼縮排
+```
+
+---
+
+# Python 學習資源
+
+**官方資源：**
+- Python 官方文檔 (英文最佳)
+- Python 教學網站
+
+**線上學習平台：**
+- Codecademy Python 課程
+- freeCodeCamp
+- Coursera Python 課程
+
+**社群與論壇：**
+- r/learnpython (Reddit)
+- Python Taiwan 社群
+- Stack Overflow
+
+**實作建議：**
+- 每天寫一點程式碼
+- 參與開源專案
+- 解決實際問題
+- 多看別人的程式碼
+
+---
+
+# Python Cheat Sheet
+
+**基本語法：**
+```python
+# 變數
+name = "小明"
+age = 25
+
+# 條件
+if age >= 18:
+    print("成年")
+else:
+    print("未成年")
+
+# 迴圈
+for i in range(5):
+    print(i)
+
+# 函數
+def greet(name):
+    return f"哈囉 {name}"
+
+# 類別
+class Person:
+    def __init__(self, name):
+        self.name = name
+```
+
+**常用模組：**
+```python
+import os        # 檔案操作
+import sys       # 系統相關
+import json      # JSON 處理
+import datetime  # 日期時間
+import requests  # HTTP 請求
+```
+
+---
+
+# 總結：Python 的學習心態
+
+---
+
+## 學習 Python 的心法
+
+**💡 學習 Python 的心法：**
+
+1. **不要怕錯** - 錯誤是最好的老師
+2. **從小開始** - 先學基本語法，再學進階
+3. **多實作** - 看再多不如動手做一次
+4. **找問題解** - 卡關時是進步的機會
+
+---
+
+## 學習心法續
+
+5. **看別人程式** - GitHub 是寶庫
+6. **加入社群** - 大家一起學比較快樂
+
+**🚀 你的 Python 之路：**
+
+---
+
+## Python 學習路徑
+
+```
+新手 → 基本語法 → 專案實作 → 深入研究 → 專業開發
+   ↓       ↓         ↓         ↓         ↓
+初學   語法熟悉   獨立開發   框架精通   架構設計
+```
+
+**記住：每一個專家都曾是新手！**
